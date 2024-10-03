@@ -13,6 +13,15 @@ label, select {
     font-size: 1rem;
 }
 
+@supports (-webkit-appearance: none) {
+    /* Safari-specific styles */
+    label, select {
+        /* Specific adjustments for Safari */
+        -webkit-appearance: menulist-button;
+        height: auto;
+    }
+}
+
 .filter-group {
     display: flex;
     align-items: center;

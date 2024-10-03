@@ -2,7 +2,7 @@
 
 ## Live Demo
 
-[View the live project here](https://coming-soon.com)
+[View the live project here](https://subly-test-sitym.ondigitalocean.app/)
 
 ### Introduction
 
@@ -13,46 +13,50 @@ This project is a media dashboard application built using React and TypeScript. 
 Project structure follows a modular approach, separating concerns across components, contexts, services, and static assets. This structure allows for better maintainability, scalability, and easier testing.
 
 ```
+project-root/
+│
 ├── public/
 │   ├── index.html
-│   └── ...
+│   ├── favicon.png
+│   ├── manifest.json
+│   └── robots.txt
+│
 ├── src/
-│   ├── assets/
+│   ├── assets/                    # Static assets such as images, icons, etc.
 │   │   └── placeholder.svg
-│   ├── components/
-│   │   ├── ErrorBoundary/
-│   │   │   └── ErrorBoundary.tsx
-│   │   ├── FilterBar/
-│   │   │   ├── FilterBar.tsx
-│   │   │   └── FilterBar.css
-│   │   ├── LoadingBar/
-│   │   │   ├── LoadingBar.tsx
-│   │   │   └── LoadingBar.css
-│   │   ├── MediaCard/
-│   │   │   ├── MediaCard.tsx
-│   │   │   └── MediaCard.css
-│   │   ├── MediaList/
-│   │   │   ├── MediaList.tsx
-│   │   │   └── MediaList.css
-│   │   ├── Modal/
-│   │   │   ├── Modal.tsx
-│   │   │   └── Modal.css
-│   │   └── ErrorMessage/
-│   │       ├── ErrorMessage.tsx
-│   │       └── ErrorMessage.css
-│   ├── contexts/
-│   │   ├── MediaContext.tsx
-│   │   └── FilterContext.tsx
-│   ├── services/
+│   │
+│   ├── components/                # All reusable UI components
+│   │   ├── ErrorBoundary/         # Component for error boundaries
+│   │   ├── ErrorMessage/          # Component to display error messages
+│   │   ├── FilterBar/             # Filter bar component
+│   │   ├── LoadingBar/            # Loading bar component
+│   │   ├── MediaCard/             # Media card component
+│   │   ├── MediaList/             # List component to display media items
+│   │   └── Modal/                 # Modal component
+│   │
+│   ├── contexts/                  # Contexts for global state management
+│   │   ├── FilterContext.tsx
+│   │   └── MediaContext.tsx
+│   │
+│   ├── services/                  # Services for API calls and business logic
 │   │   └── mediaService.ts
-│   ├── types.ts
-│   ├── index.tsx
-│   ├── App.tsx
-│   ├── setupTests.ts
-│   └── reportWebVitals.ts
-├── package.json
-├── tsconfig.json
-└── README.md
+│   │
+│   ├── __mocks__/                # Mock data for testing
+│   │   └── mockData.ts
+│   │
+│   ├── types.ts                   # TypeScript types
+│   ├── App.tsx                    # Main application component
+│   ├── index.tsx                  # Entry point for the React app
+│   ├── reportWebVitals.ts         # Reporting for web vitals
+│   ├── setupTests.ts              # Setup file for testing framework
+│   ├── App.css                    # Styles specific to the App component
+│   └── index.css                  # Global styles
+│
+├── .gitignore                      # Git ignore file
+├── package.json                    # Project dependencies and scripts
+├── package-lock.json               # Lock file for dependencies
+├── README.md                       # Project documentation
+└── tsconfig.json                   # TypeScript configuration
 ```
 
 ### Folders and Files Explained
@@ -136,6 +140,10 @@ npm start
 ```
 
 This will open the app in development mode at http://localhost:3000.
+
+## Testing
+
+This project uses [Jest](https://jestjs.io/) as the testing framework along with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) for testing React components.
 
 ### Running Tests
 
