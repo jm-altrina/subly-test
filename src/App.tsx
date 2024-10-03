@@ -1,7 +1,7 @@
 import React from 'react';
 import FilterBar from './components/FilterBar/FilterBar';
 import MediaList from './components/MediaList/MediaList';
-import ErrorBoundary from './components/ErrorBoundary';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import './App.css';
 
 // Main App component that serves as the entry point for the UI
