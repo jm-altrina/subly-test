@@ -1,0 +1,31 @@
+.error-message {
+    display: flex;
+    align-items: center;
+    background-color: #ffe6e6;
+    /* Light red background */
+    color: #cc0000;
+    /* Dark red text */
+    border: 1px solid #cc0000;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.error-message.small {
+    border: none;
+    background: none;
+}
+
+.error-message.small .error-icon {
+    display: none;
+}
+
+.error-icon {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.error-text {
+    flex: 1;
+}

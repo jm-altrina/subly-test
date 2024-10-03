@@ -1,0 +1,162 @@
+
+/* Box-sizing for all elements */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Styles for the media card */
+.media-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    width: -webkit-fill-available;
+    margin: 10px auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+/* Hover and focus effect */
+.media-card:hover,
+.media-card:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Position the card-image container */
+.card-image {
+    position: relative;
+    width: 100%;
+    padding-top: 66.66%; /* 3:2 Aspect Ratio */
+    background-color: #f0f0f0; /* Fallback color */
+    overflow: hidden;
+    border-bottom: 1px solid #ddd; /* Optional: Adds a separator */
+}
+
+/* Style for the placeholder image */
+.placeholder-image,
+.main-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the container without distortion */
+    transition: opacity 0.3s ease-in-out;
+    display: block;
+    border-radius: 8px 8px 0 0; /* Match .media-card border-radius */
+}
+
+/* Initially, placeholder is visible, main image is hidden */
+.placeholder-image {
+    z-index: 1;
+    opacity: 1;
+}
+
+.main-image {
+    z-index: 2;
+    opacity: 0;
+}
+
+/* When main image is loaded, fade it in */
+.main-image.visible {
+    opacity: 1;
+}
+
+/* Style the edit button */
+.edit-button {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Always show the edit button on touch devices */
+@media (hover: none) {
+    .edit-button {
+        opacity: 1;
+    }
+}
+
+/* Show the edit button on hover or when focused */
+.card-image:hover .edit-button,
+.card-image:focus-within .edit-button {
+    opacity: 1;
+}
+
+/* Ripple Effect */
+.edit-button::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: scale(0);
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    pointer-events: none;
+    transform-origin: center;
+}
+
+/* Loading Overlay */
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    z-index: 4;
+}
+
+/* Content Area */
+.card-content {
+    padding: 5%;
+}
+
+.card-content .name {
+    /* Truncation Styles */
+    white-space: nowrap;            /* Prevents text from wrapping to the next line */
+    overflow: hidden;               /* Hides the overflowing text */
+    text-overflow: ellipsis;        /* Adds ellipsis (...) at the end */
+}
+
+@media (min-width: 375px) and (max-width: 575px) {
+    .card-content {
+        width: 300px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 680px) {
+    .card-content {
+        width: 245px;
+    }
+}
+
+@media (min-width: 681px) and (max-width: 992px) {
+    .card-content {
+        width: 300px;
+    }
+}
+
+@media (min-width: 1275px) {
+    .card-content {
+        width: 200px;
+    }
+}
+
+@media (min-width: 1640px) {
+    .card-content {
+        width: 250px;
+    }
+}

@@ -1,0 +1,28 @@
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+label, select {
+    width: 164px;
+    height: fit-content;
+    padding: 8px 12px;
+    font-size: 1rem;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+}
+
+.filter-group label {
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.reset-button {
+    margin-left: 15px;
+}
